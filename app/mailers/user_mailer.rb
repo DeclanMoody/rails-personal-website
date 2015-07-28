@@ -1,9 +1,9 @@
-class UserMailer < ApplicationMailer
-  # default from: "declan@gmail.com"
-
-  # def registration_confirmation(user)
-  #   @user = user
-    
-  #   mail to: user.email, subject: "Sign Up Confirmation"
-  # end
+class AppMailer < ActionMailer::Base
+ 
+  default from: 'dmmoody@gmail.com'
+ 
+  def welcome_email(user)
+    @user = user
+    mail(to: @user.email_address, subject: "Welcome!")
+  end
 end
