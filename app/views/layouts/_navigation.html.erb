@@ -1,0 +1,9 @@
+<form class="navbar-form navbar-left">
+    <div class="form-group">
+    <% if !current_user %>
+        <%= link_to 'Log in', user_session_path, class: 'btn btn-default navbar-btn' %>
+    <% else %>
+        <%= link_to "Sign Out", destroy_user_session_path, class: 'btn btn-default navbar-btn', :method => :delete %>
+    <% end %>
+    </div>
+</form>
